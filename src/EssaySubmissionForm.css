@@ -1,0 +1,91 @@
+.essay-form {
+    width: 500px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 40px;
+    background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+  }
+.essay-form label {
+    margin-right: 20px;
+}
+  
+  .task input[type = 'text']{
+    width: 80%;
+    height: 100px;
+  }
+
+  .essay {
+    margin-top : 20px;
+  }
+  .essay button {
+    margin-top : 30px;
+  }
+  .essay input[type = 'text']{
+   width: 80%;
+   height: 300px;
+  }
+  .form-title {
+
+    margin: 0 0 20px;
+    font-size: 32px;
+
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .form-input,
+  .form-textarea {
+    
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-textarea {
+    resize: none;
+  }
+  
+  .form-button {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .form-button:hover {
+    background-color: #004b9a;
+  }
+  
