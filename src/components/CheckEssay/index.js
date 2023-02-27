@@ -14,6 +14,7 @@ const CheckEssay = () => {
   const [name, setName] = useState("");
   const [essay, setEssay] = useState("");
   const refTime = useRef(null);
+  const [showBtnNew, setShowBtnNew] = useState(false);
 
   const handleStart = () => {
     refTime.current?.start();
@@ -22,6 +23,11 @@ const CheckEssay = () => {
     refTime.current?.stop();
     setName("");
     setEssay("");
+    setShowBtnNew(false);
+  };
+
+  const handleCheck = () => {
+    setShowBtnNew(true);
   };
   return (
     <div className="CheckEssay" style={{ marginTop: "20px" }}>
@@ -37,32 +43,39 @@ const CheckEssay = () => {
           </Col>
           <Col lg={4}>
             <div className="mt-10 button-check " style={{ marginTop: "30px" }}>
-              <Button variant="success w-100 d-flex align-items-center mb-2 py-2">
+              <Button
+                variant="success w-100 d-flex align-items-center mb-2 py-2"
+                onClick={() => {
+                  handleCheck();
+                }}
+              >
                 <FaSpellCheck />
                 <p className="mb-0 ms-10 "> Check the Essay</p>
               </Button>
-              <Button
-                variant="warning w-100 d-flex align-items-center mb-2 py-2 "
-                onClick={() => {
-                  handleNew();
-                }}
-              >
-                <FaPen />
-                <p className="mb-0 ms-10 "> New Essay</p>
-              </Button>
-              <Button
-                variant="light d-flex align-items-center w-100 py-2"
-                onClick={() => {
-                  handleStart();
-                }}
-              >
-                <FaRegClock />
-                <p className="mb-0 ms-10"> Start timer</p>
-              </Button>
+              {showBtnNew && (
+                <Button
+                  variant="warning w-100 d-flex align-items-center mb-2 py-2 "
+                  onClick={() => {
+                    handleNew();
+                  }}
+                >
+                  <FaPen />
+                  <p className="mb-0 ms-10 "> New Essay</p>
+                </Button>
+              )}
+              {!showBtnNew && (
+                <Button
+                  variant="light d-flex align-items-center w-100 py-2"
+                  onClick={() => {
+                    handleStart();
+                  }}
+                >
+                  <FaRegClock />
+                  <p className="mb-0 ms-10"> Start timer</p>
+                </Button>
+              )}
             </div>
-            <div>
-              <TimeCountDown refTime={refTime} />
-            </div>
+            {!showBtnNew && <TimeCountDown refTime={refTime} />}
           </Col>
         </Row>
         <Row>

@@ -5,13 +5,6 @@ const TimeCountDown = (props) => {
   const { refTime } = props;
   return (
     <div>
-      {/* <Countdown
-        date={Date.now() + 40 * 60 * 1000}
-        autoStart={false}
-        ref={refTime}
-      >
-        <Finish />
-      </Countdown> */}
       <Countdown
         date={Date.now() + 40 * 60 * 1000}
         ref={refTime}
@@ -20,7 +13,12 @@ const TimeCountDown = (props) => {
         renderer={({ hours, minutes, seconds, completed }) => {
           if (completed) {
             // Render a completed state
-            return <div>Times up</div>;
+            return (
+              <div className="pt-4 text-bold">
+                Times up!
+                {/* {alert("a")} */}
+              </div>
+            );
           } else {
             // Render a countdown
             return (
