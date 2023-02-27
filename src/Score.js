@@ -1,16 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
-import EssaySubmissionForm from './EssaySubmissionForm'
-const Score = () => {
+import React from "react";
+import { useState } from "react";
 
-  const [essay , setEssay] = useState('')
+import EssaySubmissionForm from "./components/EssaySubmissionForm/index";
+const Score = () => {
+  const [essay, setEssay] = useState("");
 
   return (
-      <div>
-        <EssaySubmissionForm 
-        />
-      </div>
-  )
-}
+    <div>
+      <EssaySubmissionForm />
+    </div>
+  );
+};
 
-export default Score
+export default Score;
