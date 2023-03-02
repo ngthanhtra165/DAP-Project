@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import Footer from "./Footer";
 
 import {
   BrowserRouter as Router,
@@ -7,7 +6,7 @@ import {
   Routes,
   Redirect,
 } from "react-router-dom";
-import Example from "./Example";
+import EssayExamples from "./components/Example/Examples";
 
 import Nav from "./Nav";
 import MainPage from "./components/MainPage";
@@ -21,10 +20,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/score" element={<CheckEssay />} />
-        <Route path="/example" element={<Example />} />
+        <Route path = "/example" element= {<EssayExamples />} />
       </Routes>
 
-      <Footer />
+
     </Router>
   );
 }

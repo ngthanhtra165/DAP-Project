@@ -1,0 +1,28 @@
+.essay {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.score {
+  font-size: 24px;
+  color: #8bc34a; /* green color for score */
+}
+
+.content {
+  font-size: 16px;
+  line-height: 1.5;
+}

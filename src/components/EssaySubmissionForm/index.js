@@ -4,10 +4,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 function EssaySubmissionForm(props) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you can add your logic for submitting the essay
-  };
+  
   const { setName, name, setEssay, essay } = props;
 
   return (
@@ -29,7 +26,8 @@ function EssaySubmissionForm(props) {
         <div className="random-question">
           <Button
             onClick={() => {
-              alert("FetchApi");
+              const example = "some people say music is a good way of bringing people of different culture and ages together. to what extent do you agree or disagre"
+              setName(example);
             }}
             variant="primary"
             className="py-1"
