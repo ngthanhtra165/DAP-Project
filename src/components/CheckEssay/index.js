@@ -30,7 +30,11 @@ const CheckEssay = () => {
     setName("");
     setEssay("");
     setShowBtnNew(false);
-    setScore(0.0);
+    setScore("0.0");
+    setScore_coherence(0);
+    setScore_task(0); 
+    setScore_grammatical(0);
+    setScore_lexical(0);
   };
 
 
@@ -38,29 +42,36 @@ const CheckEssay = () => {
     setShowBtnNew(true);
     e.preventDefault();
     const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        'question': {
-          'text' : name
-        },
-        'essay' : {
-          'text' : essay
-        }
-      })
-    };
+      method: "Get",
+      headers: { "Content-Type": "application/json" , "question": name, "essay" : essay},
+    }
    
     // fetch api
-    const fetch_api = await fetch('http://localhost:8000/predict' , requestOptions).
+    const fetch_api = await fetch('https://86e4-2405-4802-35f-8b80-44a2-9cfd-3e28-ca03.ap.ngrok.io/?fbclid=IwAR0f294JflTIaGNlg76pkgdBAKVK_zZkZJKQPjHEzI5DVX1MAHItSSoQn6s' , requestOptions).
       then(response => response.json()).
       then((data) => {
         setScore_coherence( parseFloat(data['predicted_coherence']));
         setScore_task(parseFloat(data['predicted_task'])); 
+        setScore_grammatical(data['predicted_grammar']);
+        setScore_lexical(data['predicted_lexical']);
       })     
       .catch(error => console.error(error));
       // caculate the overall score 
-      let overall_band = parseFloat((score_coherence + score_task)/2);
-      setScore(overall_band);
+      // setScore_coherence(6);
+      // setScore_task(6); 
+      // setScore_grammatical(7);
+      // setScore_lexical(8);
+      let overall_band = parseFloat((score_coherence + score_task + score_lexical + score_grammatical)/4);
+      let thresh_hold = parseInt((score_coherence + score_task + score_lexical + score_grammatical)/4);
+      const kc = parseFloat(overall_band - thresh_hold);
+      console.log(`kc is ${kc}`);
+      if (kc < 0.25) setScore(thresh_hold);
+      else if (kc >= 0.25 && kc < 0.75) setScore(parseFloat(thresh_hold + 0.5));
+      else setScore(thresh_hold + 1);
+     
+      console.log(`score_coherence is ${score_coherence}`);
+      console.log(score_task);
+      console.log(overall_band);
   };
 
   return (
@@ -121,10 +132,10 @@ const CheckEssay = () => {
         <Row>
           <Col lg={8}></Col>
           <Col lg={4}>
-            <ListText arrList={arrList_COHERENCE} />
-            <ListText arrList={arrList_lexical} />
-            <ListText arrList={arrList_GRAMMATICAL} />
-            <ListText arrList={arrList_TASK} />
+            <ListText score={score_coherence} arrList={arrList_COHERENCE} />
+            <ListText score={score_grammatical} arrList={arrList_lexical} />
+            <ListText score={score_lexical} arrList={arrList_GRAMMATICAL} />
+            <ListText score={score_task} arrList={arrList_TASK} />
           </Col>
         </Row>
       </Container>
@@ -134,24 +145,30 @@ const CheckEssay = () => {
 
 export default CheckEssay;
 
+
 let arrList_COHERENCE = [
   {
     title: "COHERENCE AND COHESION",
   },
   {
     name: "Structure your answers in logical paragraphs",
+    index : 0
   },
   {
     name: "Support main points with an explanation and then an example",
+    index : 1
   },
   {
     name: "Include an introduction and conclusion",
+    index : 2
   },
   {
     name: "Use cohesive linking words accurately and appropriately",
+    index : 3
   },
   {
     name: "Vary your linking phrases using synonyms",
+    index : 4
   },
 ];
 
@@ -161,9 +178,11 @@ let arrList_lexical = [
   },
   {
     name: "Try to vary your vocabulary using accurate synonyms",
+    index : 0
   },
   {
     name: "Check your work for spelling and word formation mistakes",
+    index : 1
   },
 ];
 
@@ -173,9 +192,11 @@ let arrList_GRAMMATICAL = [
   },
   {
     name: "Use a variety of complex and simple sentences",
+    index : 0
   },
   {
     name: "Check your writing for errors",
+    index : 1
   },
 ];
 
@@ -186,9 +207,11 @@ let arrList_TASK = [
   },
   {
     name: "Answer all parts of the question",
+    index : 0
   },
   {
     name: "Word Count",
+    index : 1
   },
 ];
 

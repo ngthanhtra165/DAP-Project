@@ -23,7 +23,7 @@ const TimeCountDown = (props) => {
             // Render a countdown
             return (
               <h1 className="m-0 font-weight-bold pt-2 ">
-                {hours}:{minutes}:{seconds}
+                {minutes}:{seconds}
               </h1>
             );
           }

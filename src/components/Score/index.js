@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./index.css"
 const Score = ({score}) => {
   return (
     <div style={{ borderTop: "1px dotted #ccc" }} className="mt-4">

@@ -1,16 +1,12 @@
 .EssaySubmissionForm {
   textarea {
+  
+    min-height: 200px;
     border-top: unset;
     border-left: unset;
     border-right: unset;
     &:focus {
       box-shadow: unset;
     }
-  }
-  .random-question {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -50%);
   }
 }

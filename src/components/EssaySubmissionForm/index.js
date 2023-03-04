@@ -3,17 +3,17 @@ import "./style.scss";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import array_list from "./essayExample"
+
 function EssaySubmissionForm(props) {
-  
   const { setName, name, setEssay, essay } = props;
 
   return (
     <div className="EssaySubmissionForm ">
-      <FloatingLabel
-        controlId="floatingTextarea"
-        label="Question"
-        className="mb-3 position-relative"
-      >
+      <div className="mb-3 position-realative">
+        <label htmlFor="floatingTextarea" className="form-label mb-3 ms-3">
+          Question
+        </label>
         <Form.Control
           as="textarea"
           placeholder="Leave a comment here"
@@ -22,12 +22,15 @@ function EssaySubmissionForm(props) {
             setName(e.target.value);
           }}
           value={name}
+          id="floatingTextarea"
         />
-        <div className="random-question">
+        <div className="form-floating">
           <Button
             onClick={() => {
-              const example = "some people say music is a good way of bringing people of different culture and ages together. to what extent do you agree or disagre"
-              setName(example);
+              let chosen_id = parseInt(Math.random() * (array_list.length - 1));
+              console.log(chosen_id);
+              setName(array_list[chosen_id]);
+              
             }}
             variant="primary"
             className="py-1"
@@ -36,18 +39,21 @@ function EssaySubmissionForm(props) {
             Get a random Question
           </Button>
         </div>
-      </FloatingLabel>
-      <FloatingLabel controlId="floatingTextarea2" label="Essay">
-        <Form.Control
-          as="textarea"
-          placeholder="Leave a comment here"
-          style={{ minHeight: "100px" }}
-          onChange={(e) => {
-            setEssay(e.target.value);
-          }}
-          value={essay}
-        />
-      </FloatingLabel>
+      </div>
+      <br></br>
+      <label htmlFor="floatingTextarea2" className="form-label mb-3 ms-3">
+        Essay
+      </label>
+      <Form.Control
+        as="textarea"
+        placeholder="Leave a comment here"
+        style={{ minHeight: "100px" }}
+        onChange={(e) => {
+          setEssay(e.target.value);
+        }}
+        value={essay}
+        id="floatingTextarea2"
+      />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import {
   Routes,
   Redirect,
 } from "react-router-dom";
-import EssayExamples from "./components/Example/Examples";
+import EssayExamples from "./components/Example/Examples.js"
 
 import Nav from "./Nav";
 import MainPage from "./components/MainPage";

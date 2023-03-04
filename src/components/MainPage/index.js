@@ -10,6 +10,7 @@ const MainPage = () => {
         334,100 students have used our tool to improve their band scores without
         paying for expensive tutoring. The service checks your essay in seconds.
       </p>
+      
     </div>
   );
 };

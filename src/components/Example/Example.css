@@ -5,24 +5,36 @@
   border-radius: 5px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
 .title {
   font-size: 24px;
-  margin: 0;
-}
-
-.score {
-  font-size: 24px;
-  color: #8bc34a; /* green color for score */
+  margin-bottom: 10px;
 }
 
 .content {
   font-size: 16px;
   line-height: 1.5;
 }
+
+.score-container {
+  border: 0.2px #000000;
+  background-color: rgb(1, 158, 67);;
+  padding: 1px 3px 3px 3px;
+  display: inline-flex;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  color: white;
+  margin-right: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  
+}
+
+.score-label {
+  font-size: 12px;
+  color: #000000;
+}
+
