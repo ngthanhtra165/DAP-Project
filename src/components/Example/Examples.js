@@ -23,6 +23,19 @@ const EssayExamples = () => {
       However, that is not to say that this proposal is without disadvantages. Firstly, there is a chance that few students will ever incorporate this knowledge into their daily lives. With students living in urban areas, most will never raise livestock, while many living in apartments cannot have pets. Learning about raising livestock in detail will not be helpful for them. Secondly, this course can add more stress to students. High school kids are already under pressure to perform well in their exams, thus schools should not burden them more. Students’ objection to the home economics subject is a sufficient example to illustrate this point.  
       
       In conclusion, I believe the advantages of learning about how to grow vegetables and how livestock and other animals are raised far outweigh the disadvantages.`
+    },
+    {
+      score : 7,
+      title : `it is important for people to take risks, both in their professional lives and their personal lives
+
+      do you think the advatages of taking risks outweight the disadvantages`,
+      content : `Although it is true that risky decisions may have a huge impact on their belongings which can be positive or in worse conditions negative impact,these communities have more chances to change their lives rather those  who never take any adventure to try  their chance. In my point of view, if people consider logical factors in their choice , taking decisions to some extent may have more merits than demerits.
+
+      to begin with, on one hand, the population who never convinced themself to take the danger  probably never can have an improvement in their occupation or even their individual lives. For example, if the owner of the company of iPhone would not accept the consequence of his resolution to drop off  university , he might not achieve the accomplishment that he currently got .Furthermore, risks in people's lives may be considered as a constant teacher who teaches them new things and makes them ready for all aspects of their lives,  that those experiences made numerous inventors and scientists who helped the world to develop and as a ,result modern life emerge to communities from recent centuries. For instance ,may Tomas Edison fail in his work over and over since he approved the risk of failure, but at ,last he could invent a significant invention which changed the population's lifestyles globally.
+      
+      On the other hand, taking risks should be according to logical criteria, not all decisions have a positive effect on societies. For example , some of the youth adore driving at high speed and they claim they like to drive fast in the streets and they accept all its drawbacks,in this ,case it is clear that they may put their lives and others at risk of death and in any condition can not be reasonable activity.
+      
+       To conclude, I believe accepting adventure professionally or in our personal lives may provide plenty of opportunities that cause  improvement and the importance of taking  logical risks and their benefits  compared to not taking them is uncountable.however, not all risks are valuable to experience them, since many people lost their belongings or beloved to due accepting wrong risky actions.`
     }
   ];
 

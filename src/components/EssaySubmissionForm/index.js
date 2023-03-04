@@ -3,7 +3,7 @@ import "./style.scss";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import array_list from "./essayExample"
+import array_list from "./essayExample";
 
 function EssaySubmissionForm(props) {
   const { setName, name, setEssay, essay } = props;
@@ -28,9 +28,7 @@ function EssaySubmissionForm(props) {
           <Button
             onClick={() => {
               let chosen_id = parseInt(Math.random() * (array_list.length - 1));
-              console.log(chosen_id);
               setName(array_list[chosen_id]);
-              
             }}
             variant="primary"
             className="py-1"

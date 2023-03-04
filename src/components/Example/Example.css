@@ -17,18 +17,17 @@
 
 .score-container {
   border: 0.2px #000000;
-  background-color: rgb(1, 158, 67);;
-  padding: 1px 3px 3px 3px;
-  display: inline-flex;
-  border-radius: 5px;
-  width: 50px;
-  height: 50px;
+  background-color: rgb(20, 195, 154);
+  padding: 1px 5px 5px 5px;
+ 
+  border-radius: 7px;
+  width: 60px;
+  height: 60px;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   color: white;
   margin-right: 5px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   
 }

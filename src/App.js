@@ -6,7 +6,7 @@ import {
   Routes,
   Redirect,
 } from "react-router-dom";
-import EssayExamples from "./components/Example/Examples.js"
+import EssayExamples from "./components/Example/Examples.js";
 
 import Nav from "./Nav";
 import MainPage from "./components/MainPage";
@@ -20,10 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/score" element={<CheckEssay />} />
-        <Route path = "/example" element= {<EssayExamples />} />
+        <Route path="/example" element={<EssayExamples />} />
       </Routes>
-
-
     </Router>
   );
 }
