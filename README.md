@@ -11,3 +11,5 @@ Before run this project in locahost, we need to create a FastAPi for AI model. T
 We run the web in localhost by add this command:
 
 $ npm start
+
+You also need change the url of API 
